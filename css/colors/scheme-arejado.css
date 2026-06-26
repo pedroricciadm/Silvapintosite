@@ -271,6 +271,18 @@ a.btn-main:hover, .btn-main:hover, a.btn-line:hover, .btn-line:hover {
   transform: translateY(-1px);
 }
 
+/* Cards de imagem dos carrosséis (Áreas / diferenciais): destacáveis no hover,
+   como os botões (sobe + sombra). O palco do Owl tem overflow:hidden e cortaria
+   o efeito → liberamos só o eixo vertical (clip no horizontal evita vazamento). */
+#services-carousel .owl-stage-outer, #projects-carousel .owl-stage-outer { overflow-x: clip; overflow-y: visible; }
+#services-carousel .item, #projects-carousel .item { transition: transform .3s ease, box-shadow .3s ease; border-radius: 12px; }
+#services-carousel .item > .hover > .relative.overflow-hidden,
+#projects-carousel .item > .hover > .relative.overflow-hidden { border-radius: 12px; }
+#services-carousel .item:hover, #projects-carousel .item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 44px -16px rgba(25, 35, 43, .55);
+}
+
 /* === Diferenciação CTA ("Fale com o escritório") × rodapé =============
    Antes os dois usavam o mesmo navy (#19232b) e se fundiam. Aqui o rodapé
    recebe um navy mais fundo + um filete dourado no topo (linha divisória),
