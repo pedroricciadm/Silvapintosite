@@ -210,3 +210,14 @@ img[width][height] { height: auto; }
   footer .subfooter { margin-top: 1.1rem; }
   footer .subfooter .container { padding-top: .6rem; padding-bottom: .6rem; }
 }
+
+/* === Rodapé "Fale com a gente": igualar as fontes ao restante do rodapé ===
+   Título = "NAVEGAÇÃO" (~18px); e-mail/WhatsApp/endereço = links (~16px).
+   Fora do @media e ao fim do arquivo → vale em todos os tamanhos. */
+footer .d-flex.align-items-center > h2 { font-size: 18px !important; line-height: 1.3; margin: 0; }
+footer .widget h3 { font-size: 16px !important; line-height: 1.5; font-weight: 600; }
+/* Seta "Fale com a gente": clicável → Contato, menor e com hover */
+footer img.w-60px { width: 30px !important; }
+footer a.footer-cta-arrow { display: inline-flex; transition: transform .2s; }
+footer a.footer-cta-arrow:hover { transform: translate(2px, -2px); }
+footer a.footer-cta-arrow:hover img { opacity: 1 !important; }
