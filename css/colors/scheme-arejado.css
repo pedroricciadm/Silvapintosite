@@ -261,6 +261,16 @@ a.btn-main:hover, .btn-main:hover, a.btn-line:hover, .btn-line:hover {
 #logo a, footer .footer-logo-link { display: inline-block; transition: transform .25s ease; }
 #logo a:hover, footer .footer-logo-link:hover { transform: translateY(-2px) scale(1.03); }
 
+/* Abas de área (FAQ / .de-tab): realce de hover nas abas INATIVAS para
+   sinalizar que são clicáveis (fundo dourado suave + texto dourado + leve subida).
+   A aba ativa mantém o dourado preenchido. */
+.de-tab .d-tab-nav li { transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+.de-tab .d-tab-nav li:not(.active-tab):hover {
+  background: rgba(151, 104, 47, .12);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
 /* === Diferenciação CTA ("Fale com o escritório") × rodapé =============
    Antes os dois usavam o mesmo navy (#19232b) e se fundiam. Aqui o rodapé
    recebe um navy mais fundo + um filete dourado no topo (linha divisória),
