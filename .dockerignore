@@ -2,3 +2,5 @@
 **/.DS_Store
 **/Thumbs.db
 __MACOSX
+qa-reports/
+qa.config.json

@@ -3,3 +3,5 @@ Thumbs.db
 __MACOSX
 node_modules/
 *.log
+qa-reports/
+qa.config.json
