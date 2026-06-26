@@ -191,23 +191,20 @@ img[width][height] { height: auto; }
     font-size: .82rem; white-space: nowrap;
   }
 
-  /* --- Rodapé mais compacto no celular (melhores práticas) --- */
+  /* --- Rodapé compacto no celular (estrutura nova: grade flex) --- */
   footer { padding-top: 2.25rem !important; }
-  footer img[alt="Silva Pinto Sociedade de Advogados"] { width: 92px !important; }
-  footer .spacer-single { height: 14px !important; }
+  footer .footer-grid { display: flex; flex-wrap: wrap; gap: 1.1rem 1.4rem; }
+  footer .footer-nav, footer .footer-areas { flex: 0 0 calc(50% - .7rem); margin: 0 !important; }
+  footer .footer-contato { flex: 1 1 100%; margin: .4rem 0 0 !important; }
   footer .spacer-20 { height: 8px !important; }
-  /* Navegação e Áreas lado a lado (2 colunas) em vez de empilhadas */
-  footer .row.g-4:not(.justify-content-between) > .col-md-6 {
-    flex: 0 0 50% !important; max-width: 50% !important;
-  }
   footer .widget h2.hs-5 { font-size: .92rem !important; letter-spacing: .03em; margin-bottom: .4rem !important; }
   footer .widget ul li { line-height: 1.5 !important; font-size: .9rem; }
-  footer .social-icons { text-align: left !important; margin: .25rem 0 1rem !important; }
-  footer .d-flex.align-items-center > h2 { font-size: 1.7rem !important; }   /* "Fale com a gente" */
-  footer img.w-60px { width: 38px !important; }
+  footer .d-flex.align-items-center > h2 { font-size: 1.05rem !important; }   /* "Fale com a gente" */
+  footer img.w-60px { width: 34px !important; }
   footer .widget .op-5.fs-15 { font-size: .8rem !important; margin-top: .15rem; }
-  footer h3 { font-size: 1.02rem !important; line-height: 1.35 !important; margin-bottom: 0 !important; }
+  footer h3 { font-size: 1rem !important; line-height: 1.35 !important; margin-bottom: 0 !important; }
   footer .subfooter { margin-top: 1.1rem; }
+  footer .subfooter-row { flex-direction: column; gap: .6rem; text-align: center; }
   footer .subfooter .container { padding-top: .6rem; padding-bottom: .6rem; }
 }
 
@@ -221,3 +218,116 @@ footer img.w-60px { width: 30px !important; }
 footer a.footer-cta-arrow { display: inline-flex; transition: transform .2s; }
 footer a.footer-cta-arrow:hover { transform: translate(2px, -2px); }
 footer a.footer-cta-arrow:hover img { opacity: 1 !important; }
+
+/* === Realce de hover nos botões principais (mesmo efeito do card) =======
+   "Falar com o escritório" (.btn-main) e "Ver como podemos ajudar" (.btn-line)
+   sobem 3px e ganham sombra de elevação ao passar o mouse, mantendo a troca
+   de cor do template. Vale no site inteiro. */
+a.btn-main, .btn-main, a.btn-line, .btn-line {
+  transition: transform .25s ease, box-shadow .25s ease, background-color .3s ease, color .3s ease;
+}
+a.btn-main:hover, .btn-main:hover, a.btn-line:hover, .btn-line:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px -10px rgba(0, 0, 0, .45);
+}
+
+/* === Realce de hover nos ícones circulares dourados ====================
+   Mesmo efeito do card/botões: sobem levemente e ganham sombra. Cobre os
+   ícones do processo ("Você fala / O escritório escuta…", no index e nas
+   páginas de área) e as setas dos carrosséis (Owl), no site inteiro. */
+.de-step-icon { transition: transform .25s ease, box-shadow .25s ease; }
+.de-step:hover .de-step-icon,
+.de-step-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px -8px rgba(151, 104, 47, .5); /* sombra dourada suave */
+}
+/* setas customizadas dos carrosséis: o círculo é o pseudo :before de
+   .d-prev/.d-next (dentro de .de-custom-nav). Mesmo realce: sobe + acende + sombra. */
+.de-custom-nav .d-prev:before, .de-custom-nav .d-next:before {
+  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease, background .25s ease;
+}
+.de-custom-nav .d-prev:hover:before, .de-custom-nav .d-next:hover:before {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px -8px rgba(0, 0, 0, .45);
+}
+/* (as setas .owl-prev/.owl-next ficam display:none neste tema) */
+
+/* === Realce de hover no menu e nas logomarcas (menu + rodapé) ==========
+   Mesma lógica: leve subida ao passar o mouse. */
+#mainmenu a.menu-item { transition: transform .2s ease, color .2s ease; }
+#mainmenu a.menu-item:hover { transform: translateY(-2px); }
+
+#logo a, footer .footer-logo-link { display: inline-block; transition: transform .25s ease; }
+#logo a:hover, footer .footer-logo-link:hover { transform: translateY(-2px) scale(1.03); }
+
+/* === Diferenciação CTA ("Fale com o escritório") × rodapé =============
+   Antes os dois usavam o mesmo navy (#19232b) e se fundiam. Aqui o rodapé
+   recebe um navy mais fundo + um filete dourado no topo (linha divisória),
+   criando um degrau tonal claro sem mexer no HTML nem nas outras seções. */
+footer { background: #131b22 !important; border-top: 1px solid rgba(184, 138, 79, .22); }
+
+/* === Estrutura nova do rodapé (3 colunas no topo + logo na base) =======
+   - NAVEGAÇÃO e ÁREAS próximas; "Fale com a gente" vira card destacado.
+   - Logo movida para a faixa inferior, ao lado do copyright e das redes. */
+footer .footer-grid { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0; }
+footer .footer-grid > .widget { margin-bottom: 0; }
+/* NAVEGAÇÃO → ÁREAS: espaço reduzido (~metade do anterior). */
+footer .footer-nav { margin-right: 4.5rem; }
+footer .footer-areas { margin-right: 2.5rem; }
+
+/* Card "Fale com a gente": cor distinta + ocupa todo o espaço de Áreas até a
+   borda direita (flex-grow) e estica até a altura das colunas. Os 3 contatos
+   se distribuem com space-between → o endereço ancora na linha de "Contato". */
+footer .footer-contato {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(184, 138, 79, .3);
+  border-radius: 14px;
+  box-shadow: inset 3px 0 0 0 #b88a4f; /* filete dourado na lateral esquerda */
+  padding: .85rem 1.6rem 1rem;
+  min-width: 300px;
+  margin-top: -18px; /* sobe o card p/ o título alinhar com NAVEGAÇÃO/ÁREAS */
+  transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+footer .footer-contato .d-flex { margin-bottom: .35rem; }
+/* Título do card em dourado */
+footer .footer-contato .d-flex > h2 { color: #cda063 !important; letter-spacing: .04em; }
+/* Realce AO PASSAR O MOUSE: o card "acende" e levanta levemente */
+footer .footer-contato:hover {
+  background: rgba(255, 255, 255, .07);
+  border-color: rgba(184, 138, 79, .65);
+  box-shadow: inset 3px 0 0 0 #b88a4f, 0 16px 38px -12px rgba(0, 0, 0, .55);
+  transform: translateY(-3px);
+}
+footer .footer-contato .contato-lista {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 35px;
+}
+footer .footer-contato .contato-item h3 { margin: 0; }
+footer .footer-contato .contato-item .op-5.fs-15 { margin: 0; line-height: 1.2; }
+
+/* Faixa inferior: logo + copyright + redes na mesma linha */
+footer .subfooter-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+footer .footer-logo { width: 88px; height: auto; opacity: .92; }
+footer .subfooter-copy { font-size: 13px; opacity: .8; }
+footer .subfooter .social-icons { margin: 0 !important; }
+footer .subfooter .social-icons a { font-size: 16px; opacity: .8; margin-left: .55rem; }
+
+/* === Rodapé compacto e discreto (DESKTOP) — reduz a respiração vertical
+   sem mexer no template (style.css usa padding-top:100px). */
+@media (min-width: 768px) {
+  footer { padding-top: 52px !important; }
+  footer .widget h2.hs-5 { margin-bottom: .55rem !important; letter-spacing: .02em; opacity: .92; }
+  footer .widget ul li { line-height: 1.6 !important; }
+  footer .d-flex.align-items-center > h2 { font-size: 16px !important; opacity: .95; }
+  footer .widget .op-5.fs-15 { font-size: 12px !important; }
+  footer .widget h3 { font-size: 15px !important; line-height: 1.35; }
+  footer .subfooter { margin-top: 24px !important; }
+  footer .subfooter .container { padding-top: 12px; padding-bottom: 12px; }
+}

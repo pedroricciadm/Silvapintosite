@@ -5,3 +5,4 @@ node_modules/
 *.log
 qa-reports/
 qa.config.json
+dev-server.mjs
