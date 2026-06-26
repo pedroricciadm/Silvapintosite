@@ -1,6 +1,6 @@
 # Silva Pinto Sociedade de Advogados
 
-> Escritório de advocacia em Belo Horizonte (Barro Preto, MG) com atuação em Família e Cível, Criminal e Defesa e Trabalhista Empresarial. Orienta pessoas, famílias, empresas e empreendedores com clareza, sigilo e responsabilidade. Comunicação informativa, sem promessa de resultado e sem exposição de casos concretos (Provimento OAB 205/2021).
+> Escritório de advocacia em Belo Horizonte (Barro Preto, MG) com atuação em Família e Cível, Criminal e Defesa, Trabalhista Empresarial e Empresarial e Societário. Orienta pessoas, famílias, empresas e empreendedores com clareza, sigilo e responsabilidade. Comunicação informativa, sem promessa de resultado e sem exposição de casos concretos (Provimento OAB 205/2021).
 
 ## Sobre o escritório
 - Liderado por três advogadas sócias inscritas na OAB/MG, com equipe de associadas.
@@ -13,6 +13,7 @@
 - Família e Cível: divórcio (cartório e judicial), guarda, pensão alimentícia, partilha de bens, inventários, contratos, cobranças, indenizações, responsabilidade civil.
 - Criminal e Defesa: medidas protetivas, acompanhamento em delegacia, defesa criminal, situações de violência (Lei Maria da Penha), crimes contra a honra, ameaças, análise de provas.
 - Trabalhista Empresarial: prevenção de passivo trabalhista, contratos e rotinas internas, rescisões seguras, defesa em reclamações trabalhistas, orientação para empregadores.
+- Empresarial e Societário: abertura e alteração de empresas (constituição, contrato social, alterações societárias), contratos empresariais (fornecedores, prestação de serviços, parcerias), acordo de sócios e conflitos societários, assessoria jurídica empresarial recorrente.
 
 ## Páginas principais
 - [Início](https://silvapintoadv.com.br/index.html)
@@ -21,6 +22,7 @@
 - [Família e Cível](https://silvapintoadv.com.br/area-divorcio.html)
 - [Criminal e Defesa](https://silvapintoadv.com.br/area-violencia.html)
 - [Trabalhista Empresarial](https://silvapintoadv.com.br/area-trabalhista.html)
+- [Empresarial e Societário](https://silvapintoadv.com.br/area-empresarial.html)
 - [Sócias](https://silvapintoadv.com.br/socias.html)
 - [Dúvidas (perguntas frequentes)](https://silvapintoadv.com.br/faq.html)
 - [Contato](https://silvapintoadv.com.br/contact.html)

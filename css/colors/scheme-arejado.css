@@ -58,6 +58,17 @@
 .wow { visibility: visible !important; opacity: 1 !important; animation-name: none !important; }
 footer { position: relative; z-index: 2; }
 
+/* --- Trava de segurança do preloader (#de-loader) ---
+   O overlay de carregamento some via JS no evento window.load. Em conexões
+   lentas, os scripts (jQuery/designesia) demoram a baixar e a trava JS de 4s
+   só começa a contar depois deles — o overlay fica preso cobrindo a tela e o
+   usuário acha que "o rodapé/conteúdo não carregou". Esta animação em CSS puro
+   não depende de JS: 4s após o CSS aplicar, esconde o overlay e revela o
+   conteúdo (que já está renderizado por baixo). Se o JS rodar antes, o fadeOut
+   acontece normalmente e esta trava nem chega a agir. --- */
+#de-loader { animation: spDeLoaderHide 0s linear 4s forwards; }
+@keyframes spDeLoaderHide { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
 /* --- Header fixo: acompanha a rolagem (menu sempre visível) ---
    Base do template é position:absolute; aqui fixamos no topo. Sobre o hero
    fica transparente; ao rolar (JS adiciona .scrollOn >50px) ganha fundo navy
