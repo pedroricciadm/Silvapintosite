@@ -1,9 +1,4 @@
 .git
-.gitignore
-.dockerignore
-Dockerfile
-nginx.conf
-README.md
 **/.DS_Store
 **/Thumbs.db
 __MACOSX
