@@ -1,0 +1,52 @@
+/* ============================================================
+   Silva Pinto — esquema de cores (teste GRAFITE)
+   Base grafite #424242 + bege quente + acento cobre #B86A3E
+   Sobrescreve as variáveis do template (declaradas em * {} no
+   style.css e em :root {} no scheme-01.css). Carregar por último.
+   ============================================================ */
+
+/* bloco * — vence o "* {}" do style.css (mesma especificidade, carrega depois) */
+* {
+  /* acento (botões, links, id-color, hovers, dots) — cobre humano */
+  --primary-color: #B86A3E;
+  --primary-color-rgb: 184, 106, 62;
+  --secondary-color: #B86A3E;
+  --secondary-color-rgb: 184, 106, 62;
+
+  /* texto e títulos — grafite */
+  --body-font-color: rgba(38, 38, 38, .80);
+  --heading-font-color: #2b2b2b;
+
+  /* fundos claros — bege quente */
+  --bg-default: #EDE5D7;
+  --bg-light: #F7F3EC;
+
+  /* fundos escuros — grafite */
+  --bg-dark-1: #424242;
+  --bg-dark-2: #4f4f4f;
+  --bg-dark-3: #5c5c5c;
+  --bg-dark-1-rgb: 66, 66, 66;
+
+  --swiper-theme-color: #B86A3E;
+}
+
+/* bloco :root — vence qualquer :root {} de esquemas anteriores */
+:root {
+  --primary-color: #B86A3E;
+  --primary-color-rgb: 184, 106, 62;
+  --secondary-color: #B86A3E;
+  --secondary-color-rgb: 184, 106, 62;
+
+  --body-font-color: rgba(38, 38, 38, .80);
+  --heading-font-color: #2b2b2b;
+
+  --bg-default: #EDE5D7;
+  --bg-light: #F7F3EC;
+
+  --bg-dark-1: #424242;
+  --bg-dark-2: #4f4f4f;
+  --bg-dark-3: #5c5c5c;
+  --bg-dark-1-rgb: 66, 66, 66;
+
+  --swiper-theme-color: #B86A3E;
+}

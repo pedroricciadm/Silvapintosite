@@ -1,0 +1,150 @@
+/* ============================================================
+   Silva Pinto — esquema "AREJADO INSTITUCIONAL"
+   Alinhado à comunicação do Instagram: navy + dourado + areia.
+   Mantém a leveza (site majoritariamente claro em areia),
+   com poucos blocos escuros em navy e acento dourado.
+   Paleta IG: navy #19232b · dourado #b88a4f / #97682f (escuro p/ luz)
+              areia #f6f1e9→#e7dcc9 · corpo ardósia #44505b
+   Carregar por último (vence style.css e demais schemes).
+   ============================================================ */
+
+:root, * {
+  /* acento (botões, links, hovers, dots) — dourado escurecido p/ contraste em fundo claro */
+  --primary-color: #97682f;
+  --primary-color-rgb: 151, 104, 47;
+  --secondary-color: #97682f;
+  --secondary-color-rgb: 151, 104, 47;
+
+  /* texto e títulos */
+  --body-font-color: #44505b;            /* ardósia quente (IG) */
+  --heading-font-color: #19232b;         /* navy (IG) */
+
+  /* fundos claros — areia/bege do IG (site majoritariamente claro) */
+  --bg-default: #f4eee3;
+  --bg-light:   #faf6ef;
+  --bg-grey:    #efe7d9;
+  --bg-color-even: #efe7d9;
+  --bg-color-odd:  #faf6ef;
+
+  /* blocos escuros (poucos) — navy do IG */
+  --bg-dark-1: #19232b;
+  --bg-dark-2: #243240;
+  --bg-dark-3: #2d3f50;
+  --bg-dark-1-rgb: 25, 35, 43;
+
+  --footer-background-color: #19232b;
+  --swiper-theme-color: #b88a4f;
+}
+
+/* --- Seções escuras: o template usa .section-dark mas NÃO a define em
+   nenhum CSS (só o footer tem fundo próprio). Sem isto, blocos como o CTA
+   "Fale com o escritório, com sigilo" ficam com texto claro sobre fundo
+   claro (ilegível). Aqui damos o fundo navy a essas seções. --- */
+.section-dark { background-color: var(--bg-dark-1); }
+.section-dark .subtitle { color: #cda063; }
+
+/* --- Legibilidade dos overlays sobre imagens (véu navy) --- */
+.sw-overlay.op-4 { opacity: .55; }
+.sw-overlay.op-5 { opacity: .62; }
+.sw-overlay.op-6 { opacity: .72; }
+.sw-overlay.op-7 { opacity: .80; }
+.jarallax > .sw-overlay { background: var(--bg-dark-1); }
+
+/* --- Fail-safe das animações de scroll (WOW.js) ---
+   O WOW esconde elementos com visibility:hidden até revelar; em páginas longas
+   alguns às vezes não disparam e ficam invisíveis ("rodapé/seção não carrega").
+   Forçar visibility:visible garante que o conteúdo SEMPRE aparece; a animação
+   ainda toca quando entra na viewport. --- */
+.wow { visibility: visible !important; opacity: 1 !important; animation-name: none !important; }
+footer { position: relative; z-index: 2; }
+
+/* --- Header fixo: acompanha a rolagem (menu sempre visível) ---
+   Base do template é position:absolute; aqui fixamos no topo. Sobre o hero
+   fica transparente; ao rolar (JS adiciona .scrollOn >50px) ganha fundo navy
+   para o menu continuar legível sobre o conteúdo claro. --- */
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  width: 100%;
+  background: rgba(25, 35, 43, 0.82) !important;   /* navy com leve opacidade */
+  box-shadow: 0 2px 16px rgba(16, 35, 43, 0.12);
+  transition: background .3s ease;
+}
+/* garante que logo, menu e botões fiquem sempre acima do fundo translúcido
+   e visíveis ao rolar (evita o sumiço por compositing) */
+header .container, header #logo, header #mainmenu, header .menu_side_area {
+  position: relative;
+  z-index: 2;
+}
+header #mainmenu > li > a, header #logo a { color: #fff; }
+/* neutraliza o auto-hide por direção de scroll do template
+   (.scroll-down puxava o header com margin-top:-90px → sumia ao rolar) */
+header.scroll-down, header.nav-up, header.scroll-up { margin-top: 0 !important; }
+/* ===== Menu mobile (≤1199px): lista vertical limpa e COMPLETA =====
+   O menu mobile do template é position:absolute dentro de header overflow:hidden
+   e clipa os itens a partir do que tem submenu. Aqui reescrevemos como lista
+   vertical estática, com altura automática e todos os itens visíveis. */
+@media (max-width: 1199px) {
+  header.header-mobile #mainmenu {
+    position: static !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+    display: none;
+  }
+  header.header-mobile.menu-open {
+    background: var(--bg-dark-1) !important;
+    height: auto !important;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  header.header-mobile.menu-open #mainmenu { display: block !important; }
+  /* menu ocupa a largura toda, alinhado à esquerda, abaixo do logo/botão */
+  header.header-mobile .de-flex { flex-wrap: wrap; }
+  header.header-mobile .header-col-mid { width: 100% !important; order: 3; }
+  header.header-mobile #mainmenu { margin: 0 !important; text-align: left !important; }
+  header.header-mobile #mainmenu li,
+  header.header-mobile #mainmenu li ul,
+  header.header-mobile #mainmenu li ul li {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    position: static !important;
+  }
+  /* zera a "caixa" do dropdown desktop no mobile (fundo/borda/sombra) */
+  header.header-mobile #mainmenu li ul {
+    background: none !important; border: none !important; box-shadow: none !important;
+    padding-left: 18px !important; min-width: 0 !important; transform: none !important;
+    opacity: 1 !important; visibility: visible !important;
+    height: auto !important; max-height: none !important; overflow: visible !important;
+    margin: 0 !important; left: auto !important; top: auto !important;
+  }
+  header.header-mobile #mainmenu a {
+    display: block !important;
+    color: #fff !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  header.header-mobile #mainmenu li ul a { color: rgba(255,255,255,.75) !important; border-bottom: none !important; padding: 8px 0 !important; }
+}
+/* header mais slim: padding do menu enxuto + logo com altura controlada
+   (o logo era quadrado 1000x1000 com muito vazio → recortado e limitado aqui) */
+header #mainmenu a { padding-top: 17px !important; padding-bottom: 17px !important; }
+header #logo img { height: 50px !important; width: auto !important; max-width: none !important; }
+
+/* --- Cards de blog (grade .row.gy-5): altura igual + linha autor/data
+   alinhada no rodapé, independente do tamanho do resumo. --- */
+.row.gy-5 > [class*="col-"] { display: flex; }
+.row.gy-5 > [class*="col-"] > .hover { display: flex; flex-direction: column; width: 100%; }
+.row.gy-5 .hover > .pt-4 { display: flex; flex-direction: column; flex: 1 1 auto; }
+.row.gy-5 .hover > .pt-4 > .relative:last-child { margin-top: auto; padding-top: .75rem; }
+
+/* --- Acento dourado MAIS CLARO dentro de blocos escuros (como no IG) --- */
+.section-dark .id-color,
+.text-light .id-color,
+.bg-dark .id-color,
+.section-dark .subtitle,
+.text-light .subtitle { color: #cda063 !important; }
+
+.text-light a:hover,
+.section-dark a:hover { color: #b88a4f !important; }

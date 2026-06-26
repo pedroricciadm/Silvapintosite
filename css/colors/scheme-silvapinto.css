@@ -1,0 +1,52 @@
+/* ============================================================
+   Silva Pinto — esquema de cores (teste)
+   Base azul-noite #102b49 + bege quente + acento cobre #B86A3E
+   Sobrescreve as variáveis do template (declaradas em * {} no
+   style.css e em :root {} no scheme-01.css). Carregar por último.
+   ============================================================ */
+
+/* bloco * — vence o "* {}" do style.css (mesma especificidade, carrega depois) */
+* {
+  /* acento (botões, links, id-color, hovers, dots) — cobre humano */
+  --primary-color: #B86A3E;
+  --primary-color-rgb: 184, 106, 62;
+  --secondary-color: #B86A3E;
+  --secondary-color-rgb: 184, 106, 62;
+
+  /* texto e títulos */
+  --body-font-color: rgba(24, 40, 58, .80);
+  --heading-font-color: #102b49;
+
+  /* fundos claros — bege quente */
+  --bg-default: #EDE5D7;
+  --bg-light: #F7F3EC;
+
+  /* fundos escuros — azul-noite */
+  --bg-dark-1: #102b49;
+  --bg-dark-2: #16395f;
+  --bg-dark-3: #1f4a78;
+  --bg-dark-1-rgb: 16, 43, 73;
+
+  --swiper-theme-color: #B86A3E;
+}
+
+/* bloco :root — vence qualquer :root {} de esquemas anteriores */
+:root {
+  --primary-color: #B86A3E;
+  --primary-color-rgb: 184, 106, 62;
+  --secondary-color: #B86A3E;
+  --secondary-color-rgb: 184, 106, 62;
+
+  --body-font-color: rgba(24, 40, 58, .80);
+  --heading-font-color: #102b49;
+
+  --bg-default: #EDE5D7;
+  --bg-light: #F7F3EC;
+
+  --bg-dark-1: #102b49;
+  --bg-dark-2: #16395f;
+  --bg-dark-3: #1f4a78;
+  --bg-dark-1-rgb: 16, 43, 73;
+
+  --swiper-theme-color: #B86A3E;
+}
