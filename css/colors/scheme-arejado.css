@@ -159,3 +159,54 @@ header #logo img { height: 50px !important; width: auto !important; max-width: n
 
 .text-light a:hover,
 .section-dark a:hover { color: #b88a4f !important; }
+
+/* === Imagens com width/height: manter a proporção (não fixar a altura do atributo).
+   Reserva o espaço da imagem antes de carregar → elimina o "pulo" de layout (CLS)
+   que fazia o conteúdo/rodapé "fugir" e parecer que o rodapé não carregava. === */
+img[width][height] { height: auto; }
+
+/* ===================== AJUSTES MOBILE (≤767px) ===================== */
+@media (max-width: 767px) {
+
+  /* --- Carrossel de diferenciais: tirar título e tags de CIMA da imagem ---
+     No celular a imagem fica limpa: título acima, imagem no meio, tags (chips) abaixo. */
+  #projects-carousel .item a.text-light { color: var(--bg-dark-1) !important; }
+  #projects-carousel .item .abs.w-50 {
+    position: static !important; width: 100% !important;
+    padding: 0 0 .25rem 0 !important; margin: 0 !important; z-index: auto !important;
+  }
+  #projects-carousel .item .abs.w-50 h2 {
+    font-size: 1.35rem !important; line-height: 1.18 !important; color: var(--bg-dark-1) !important;
+  }
+  #projects-carousel .item img.abs.w-80px { display: none !important; }   /* seta decorativa */
+  #projects-carousel .item .gradient-edge-top { display: none !important; }
+  #projects-carousel .item .extra-text {
+    position: static !important; margin: .7rem 0 0 0 !important;
+    flex-wrap: wrap !important; gap: .45rem; line-height: 1.3 !important;
+  }
+  #projects-carousel .item .extra-text .bg-blur {
+    background: rgba(151,104,47,.10) !important; backdrop-filter: none !important;
+    color: var(--bg-dark-1) !important; border: 1px solid rgba(151,104,47,.40);
+    border-radius: 999px; padding: .4rem .8rem !important; margin: 0 !important;
+    font-size: .82rem; white-space: nowrap;
+  }
+
+  /* --- Rodapé mais compacto no celular (melhores práticas) --- */
+  footer { padding-top: 2.25rem !important; }
+  footer img[alt="Silva Pinto Sociedade de Advogados"] { width: 92px !important; }
+  footer .spacer-single { height: 14px !important; }
+  footer .spacer-20 { height: 8px !important; }
+  /* Navegação e Áreas lado a lado (2 colunas) em vez de empilhadas */
+  footer .row.g-4:not(.justify-content-between) > .col-md-6 {
+    flex: 0 0 50% !important; max-width: 50% !important;
+  }
+  footer .widget h2.hs-5 { font-size: .92rem !important; letter-spacing: .03em; margin-bottom: .4rem !important; }
+  footer .widget ul li { line-height: 1.5 !important; font-size: .9rem; }
+  footer .social-icons { text-align: left !important; margin: .25rem 0 1rem !important; }
+  footer .d-flex.align-items-center > h2 { font-size: 1.7rem !important; }   /* "Fale com a gente" */
+  footer img.w-60px { width: 38px !important; }
+  footer .widget .op-5.fs-15 { font-size: .8rem !important; margin-top: .15rem; }
+  footer h3 { font-size: 1.02rem !important; line-height: 1.35 !important; margin-bottom: 0 !important; }
+  footer .subfooter { margin-top: 1.1rem; }
+  footer .subfooter .container { padding-top: .6rem; padding-bottom: .6rem; }
+}
