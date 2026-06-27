@@ -283,6 +283,14 @@ a.btn-main:hover, .btn-main:hover, a.btn-line:hover, .btn-line:hover {
   box-shadow: 0 20px 44px -16px rgba(25, 35, 43, .55);
 }
 
+/* Cards de imagem do BLOG (home + página do blog): destacáveis no hover, como os
+   botões/cards. As capas do blog usam .hover-scale-1-1 → escopo seguro via :has(). */
+.relative.overflow-hidden.rounded-1:has(> img.hover-scale-1-1) { transition: transform .3s ease, box-shadow .3s ease; }
+.hover:hover .relative.overflow-hidden.rounded-1:has(> img.hover-scale-1-1) {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px -16px rgba(25, 35, 43, .45);
+}
+
 /* === Diferenciação CTA ("Fale com o escritório") × rodapé =============
    Antes os dois usavam o mesmo navy (#19232b) e se fundiam. Aqui o rodapé
    recebe um navy mais fundo + um filete dourado no topo (linha divisória),
