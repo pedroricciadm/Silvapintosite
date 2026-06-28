@@ -10,5 +10,6 @@
   <url><loc>https://silvapintoadv.com.br/socias.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://silvapintoadv.com.br/faq.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://silvapintoadv.com.br/contact.html</loc><lastmod>2026-06-26</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <!-- O blog migrou para o subdominio blog.silvapintoadv.com.br (CMS); ver o sitemap proprio do subdominio. -->
+  <url><loc>https://silvapintoadv.com.br/blog.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <!-- Os artigos do blog vivem no subdominio blog.silvapintoadv.com.br (CMS), com sitemap proprio. A blog.html e a vitrine (6 mais recentes) no site institucional. -->
 </urlset>
