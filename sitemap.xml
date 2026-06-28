@@ -10,11 +10,5 @@
   <url><loc>https://silvapintoadv.com.br/socias.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://silvapintoadv.com.br/faq.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://silvapintoadv.com.br/contact.html</loc><lastmod>2026-06-26</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog.html</loc><lastmod>2026-06-26</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog-single.html</loc><lastmod>2026-01-10</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog-bens-ocultos.html</loc><lastmod>2026-02-22</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog-medida-protetiva.html</loc><lastmod>2026-03-05</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog-perspectiva-genero.html</loc><lastmod>2026-03-18</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog-antes-de-demitir.html</loc><lastmod>2026-04-02</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://silvapintoadv.com.br/blog-primeiro-atendimento.html</loc><lastmod>2026-04-15</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <!-- O blog migrou para o subdominio blog.silvapintoadv.com.br (CMS); ver o sitemap proprio do subdominio. -->
 </urlset>
