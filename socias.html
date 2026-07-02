@@ -2,6 +2,21 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Google tag (gtag.js) — GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNYDE14ZP3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TNYDE14ZP3');
+      // Conversao: clique em WhatsApp/telefone (medicao do contato)
+      document.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp"], a[href*="whatsapp.com"], a[href^="tel:"]');
+        if(!a) return;
+        var metodo = a.getAttribute('href').indexOf('tel:') === 0 ? 'telefone' : 'whatsapp';
+        gtag('event', 'contato_clique', { metodo: metodo, link_destino: a.href });
+      }, true);
+    </script>
     <title>Sócias | Silva Pinto Sociedade de Advogados</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
