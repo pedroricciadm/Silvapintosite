@@ -150,6 +150,8 @@
 
 <body>
 
+        <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
         <!-- header begin -->
         <header class="transparent">
             <div class="container">
@@ -167,7 +169,7 @@
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <div class="de-flex-col header-col-mid" role="navigation" aria-label="Menu principal">
                                 <!-- mainemenu begin -->
                                 <ul id="mainmenu">
                                     <li><a class="menu-item" href="index.html">Início</a></li>
@@ -191,10 +193,10 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="https://wa.me/5531984020494?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20escrit%C3%B3rio%20Silva%20Pinto.%20Gostaria%20de%20explicar%20brevemente%20o%20que%20me%20trouxe%20at%C3%A9%20aqui." class="btn-main fx-slide" target="_blank" rel="noopener"><span>Falar com sigilo</span></a>
-                                    <span id="menu-btn"></span>
+                                    <button type="button" id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainmenu"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <div id="btn-extra" aria-hidden="true">
                                     <span></span>
                                     <span></span>
                                 </div>
@@ -207,9 +209,9 @@
         <!-- header close -->
 
         <!-- content begin -->
-        <main>
+        <main id="conteudo">
 
-            <a href="#" id="back-to-top"></a>
+            <a href="#" id="back-to-top" aria-label="Voltar ao topo"></a>
 
             <!-- page preloader begin -->
             <div id="de-loader"></div>
@@ -716,7 +718,7 @@
                             <div class="hover">
                                 <div class="relative overflow-hidden rounded-1 wow zoomIn" data-wow-duration="1.5s">
                                     <img width="1000" height="1350" loading="lazy" src="images/blog/6.webp" class="w-100 hover-scale-1-1" alt="Primeiro atendimento: o que acontece quando você fala com o escritório">
-                                    <a href="blog-primeiro-atendimento.html" class="d-block abs w-100 h-100 top-0 start-0"></a>
+                                    <a href="blog-primeiro-atendimento.html" class="d-block abs w-100 h-100 top-0 start-0" aria-label="Primeiro atendimento: o que acontece quando você fala com o escritório"></a>
                                 </div>
                                 <div class="pt-4">
                                     <h3><a class="text-dark" href="blog-primeiro-atendimento.html">Primeiro atendimento: o que acontece quando você fala com o escritório</a></h3>
@@ -734,7 +736,7 @@
                             <div class="hover">
                                 <div class="relative overflow-hidden rounded-1 wow zoomIn" data-wow-duration="1.5s">
                                     <img width="1000" height="1350" loading="lazy" src="images/blog/5.webp" class="w-100 hover-scale-1-1" alt="Antes de demitir: 5 perguntas para evitar passivo trabalhista">
-                                    <a href="blog-antes-de-demitir.html" class="d-block abs w-100 h-100 top-0 start-0"></a>
+                                    <a href="blog-antes-de-demitir.html" class="d-block abs w-100 h-100 top-0 start-0" aria-label="Antes de demitir: 5 perguntas para evitar passivo trabalhista"></a>
                                 </div>
                                 <div class="pt-4">
                                     <h3><a class="text-dark" href="blog-antes-de-demitir.html">Antes de demitir: 5 perguntas para evitar passivo trabalhista</a></h3>
@@ -752,7 +754,7 @@
                             <div class="hover">
                                 <div class="relative overflow-hidden rounded-1 wow zoomIn" data-wow-duration="1.5s">
                                     <img width="1000" height="1350" loading="lazy" src="images/blog/4.webp" class="w-100 hover-scale-1-1" alt="Perspectiva de gênero na defesa criminal: quando o contexto muda a estratégia">
-                                    <a href="blog-perspectiva-genero.html" class="d-block abs w-100 h-100 top-0 start-0"></a>
+                                    <a href="blog-perspectiva-genero.html" class="d-block abs w-100 h-100 top-0 start-0" aria-label="Perspectiva de gênero na defesa criminal: quando o contexto muda a estratégia"></a>
                                 </div>
                                 <div class="pt-4">
                                     <h3><a class="text-dark" href="blog-perspectiva-genero.html">Perspectiva de gênero na defesa criminal: quando o contexto muda a estratégia</a></h3>
@@ -901,8 +903,8 @@
                         <a href="index.html" class="footer-logo-link" aria-label="Início — Silva Pinto Sociedade de Advogados"><img src="images/logo-white.webp" class="footer-logo" alt="Silva Pinto Sociedade de Advogados"></a>
                         <div class="subfooter-copy">© 2026 Silva Pinto Sociedade de Advogados · Belo Horizonte / MG<br>Site criado e desenvolvido por <a href="https://pedidoativo.com.br/?utm_source=silva-pinto&amp;utm_medium=rodape&amp;utm_campaign=credito" target="_blank" rel="noopener" style="color:inherit">Pedido Ativo</a> · <a href="https://www.instagram.com/pedidoativo/" target="_blank" rel="noopener" style="color:inherit">@pedidoativo</a></div>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/silvapinto.advogados/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://wa.me/5531984020494?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20escrit%C3%B3rio%20Silva%20Pinto.%20Gostaria%20de%20explicar%20brevemente%20o%20que%20me%20trouxe%20at%C3%A9%20aqui." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/silvapinto.advogados/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://wa.me/5531984020494?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20escrit%C3%B3rio%20Silva%20Pinto.%20Gostaria%20de%20explicar%20brevemente%20o%20que%20me%20trouxe%20at%C3%A9%20aqui." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                             <a href="https://www.facebook.com/profile.php?id=61591014252260" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                             <a href="https://www.linkedin.com/company/81369975" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                             <a href="https://g.page/r/CdEEvNDEPt-2EBE" target="_blank" rel="noopener" aria-label="Google"><i class="fa-brands fa-google"></i></a>

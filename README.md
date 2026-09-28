@@ -17,4 +17,8 @@ Site estático (HTML/CSS/JS) do escritório, servido por **Nginx** em container.
 Servir a pasta com qualquer servidor estático, ex.:
 `python -m http.server 3002`
 
+## Acessibilidade
+`node scripts/verificar-a11y.mjs` — checagem estática (sem dependências) de foco por teclado,
+menu mobile, rótulos e contraste. Rodar antes de publicar; sai com código 1 se algo regrediu.
+
 > Marca, conteúdo e conformidade OAB conforme o projeto Silva Pinto. Imagens e textos otimizados para SEO/GEO/LLM.

@@ -361,3 +361,44 @@ footer .subfooter .social-icons a { font-size: 16px; opacity: .8; margin-left: .
   footer .subfooter { margin-top: 24px !important; }
   footer .subfooter .container { padding-top: 12px; padding-bottom: 12px; }
 }
+
+/* ===================== ACESSIBILIDADE (teclado e contraste) =====================
+   Conferido por scripts/verificar-a11y.mjs — se mudar algo aqui, rode o script. */
+
+/* --- Foco visível: o template zera o outline de todo link (a, #mainmenu a,
+   #back-to-top...) e quem navega por teclado não enxergava onde estava.
+   :focus-visible só aparece no teclado; clique de mouse continua sem anel.
+   #97682f dá ≥3:1 na areia e no navy; em blocos escuros usamos o dourado claro. */
+:focus-visible { outline: 3px solid #97682f !important; outline-offset: 2px; }
+header :focus-visible,
+footer :focus-visible,
+.section-dark :focus-visible,
+.text-light :focus-visible,
+.bg-dark :focus-visible,
+.bg-dark-1 :focus-visible { outline-color: #cda063 !important; }
+
+/* --- "Pular para o conteúdo": primeiro Tab da página; fora da tela até receber foco. */
+.skip-link {
+  position: absolute; left: 1rem; top: -200px; z-index: 1100;
+  background: var(--bg-dark-1); color: #fff !important;
+  padding: .75rem 1.25rem; border-radius: 6px; font-weight: 600;
+}
+.skip-link:focus { top: 1rem; }
+
+/* --- Botão do menu mobile: era <span> (inalcançável por Tab); agora é <button>.
+   Zera o visual padrão de botão para ficar idêntico ao ícone anterior. */
+button#menu-btn {
+  -webkit-appearance: none; appearance: none;
+  background: none; border: 0; font: inherit; line-height: 1.5em;
+}
+
+/* --- Contraste: .id-color é texto pequeno (seção dos cards do blog, 12px caixa-alta)
+   sobre areia. #97682f dava ~4,2:1 (abaixo de 4,5:1); #83592a dá ~5,3:1 e mantém o tom.
+   Em blocos escuros vale a regra do dourado claro acima (!important). */
+.id-color, a.id-color { color: #83592a; }
+
+/* --- "Voltar ao topo" escondido (opacity 0 / fora da tela) ainda recebia Tab logo
+   depois do menu. Oculto de verdade quando não está à mostra; o atraso na
+   visibility deixa a animação de saída terminar. */
+#back-to-top:not(.show),
+#back-to-top.hide { visibility: hidden; transition: .5s, visibility 0s linear .5s; }

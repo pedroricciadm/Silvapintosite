@@ -21,6 +21,27 @@
     let newScrollPosition = 0;
     let lastScrollPosition;
      /* predefined vars end */
+
+     /* --------------------------------------------------
+      * menu mobile | abre/fecha a partir da classe .menu-open
+      * O template contava cliques em mobileMenuShow, que começava em 1 entre
+      * 993 e 1199px (hambúrguer já visível): o primeiro toque não abria nada.
+      * Aqui a classe do header é a única fonte de verdade, e o botão anuncia
+      * o estado para leitor de tela (aria-expanded + rótulo).
+      * --------------------------------------------------*/
+     function setMenuMobile(abrir) {
+       const $header = $('header');
+       if (abrir) {
+         $header.addClass('menu-open').css('height', $(window).innerHeight());
+       } else {
+         $header.removeClass('menu-open').css('height', 'auto');
+       }
+       mobileMenuShow = abrir ? 1 : 0;
+       $('#menu-btn')
+         .toggleClass('menu-open', abrir)
+         .attr('aria-expanded', abrir ? 'true' : 'false')
+         .attr('aria-label', abrir ? 'Fechar menu' : 'Abrir menu');
+     }
      
      /* --------------------------------------------------
       * header | sticky
@@ -197,6 +218,8 @@
          },
          unmatch() {
            const $body = $('body');
+           // saiu do modo mobile com o menu aberto: fecha, senão o header fica com altura de tela
+           if ($('header').hasClass('menu-open')) setMenuMobile(false);
            $('header').removeClass('header-mobile');
            if ($body.hasClass('side-content')) {
              $body.addClass('side-layout');
@@ -1506,17 +1529,14 @@
          // --------------------------------------------------
          jQuery('#menu-btn').off("click").on("click", function(e) {
              e.preventDefault();
-             const $header = jQuery('header');
-             const h = $header[0].scrollHeight;
+             setMenuMobile(!jQuery('header').hasClass('menu-open'));
+         });
 
-             if (mobileMenuShow === 0) {
-                 $header.addClass('menu-open').css('height', $(window).innerHeight());
-                 mobileMenuShow = 1;
-                 jQuery(this).addClass("menu-open");
-             } else {
-                 $header.removeClass('menu-open').css('height', 'auto');
-                 mobileMenuShow = 0;
-                 jQuery(this).removeClass("menu-open");
+         // Esc fecha o menu aberto e devolve o foco ao botão
+         jQuery(document).on("keydown", function(e) {
+             if (e.key === "Escape" && jQuery('header').hasClass('menu-open')) {
+                 setMenuMobile(false);
+                 jQuery('#menu-btn').trigger('focus');
              }
          });
 
